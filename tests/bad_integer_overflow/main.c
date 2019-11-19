@@ -51,6 +51,7 @@ noreturn static void supervisor_init(unsigned int hartid, phys_addr_t dtb)
 extern long sys_dict_get(void);
 extern long sys_dict_set(long);
 extern long sys_change_user(long);
+extern long sys_mask_user(long);
 
 void do_trap_ecall_s(struct pt_regs *regs)
 {
@@ -70,6 +71,9 @@ void do_trap_ecall_s(struct pt_regs *regs)
                 break;
         case __NR_change_user:
                 r = sys_change_user(regs->a0);
+                break;
+        case __NR_mask_user:
+                r = sys_mask_user(regs->a0);
                 break;
         }
 

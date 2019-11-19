@@ -11,6 +11,7 @@ void asm_offsets(void)
         DEFINE(__NR_dict_get, __NR_dict_get);
         DEFINE(__NR_dict_set, __NR_dict_set);
         DEFINE(__NR_change_user, __NR_change_user);
+        DEFINE(__NR_mask_user, __NR_mask_user);
 
         DEFINE(MAXUSER, MAXUSER);
 
