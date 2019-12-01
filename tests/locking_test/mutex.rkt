@@ -33,6 +33,7 @@
           (list (inc-thread) (get-thread)))
   (check-equal? (inc-thread) 0)
   (check-equal? (get-thread) -1)
+  (call-in-nested-thread (inc-thread) (get-thread))
 )
 
 (define mutex-tests
