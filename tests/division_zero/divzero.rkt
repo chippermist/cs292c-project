@@ -28,7 +28,8 @@
   (check-equal? (length asserted) 1)
   (define cond (first asserted))
   (define sol (verify (asserted cond)))
-  (check-sat sol))
+  (check-sat? sol)
+  (evaluate cond sol))
 
 (define divzero-tests
   (test-suite+
@@ -36,7 +37,8 @@
 
     (parameterize ([current-machine (make-machine)])
 	(test-case+ "division-symbolic" (check-symbolic-division))
-	(test-case+ "division-buggy" (check-buggy-div)))))
+	(test-case+ "division-buggy" (check-buggy-div))
+  )))
 
 (module+ test
-	 (time run-tests divzero-tests))
+	 (time (run-tests divzero-tests)))

@@ -2,7 +2,7 @@
 
 uint32_t division(uint32_t x, uint32_t y) {
   if (y != 0) 
- 	return x / y;
+ 	  return x / y;
   return 0;
 }
 
